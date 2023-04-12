@@ -1,0 +1,83 @@
+[
+    {
+      "_id": "64362a3d37b9b4760762badd",
+      "place_name":"Westminister Bridge",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img01.jpg",
+      "location":"London",
+      "price":100,
+      "reating":4.9,
+      "total_reating":50,
+      "description":"Westminster Bridge is a famous bridge that spans the River Thames in London, England. It connects the districts of Westminster on the north side of the river with Lambeth on the south side. The bridge is one of the city's most iconic landmarks and is known for its stunning views of some of London's most famous landmarks. The bridge has a total of seven spans, with the central span being the longest at 98 meters. It is made of cast iron and has a distinctive green color, which adds to its charm. The bridge was designed by architect Thomas Page and opened in 1862, replacing an earlier bridge that had been in place since the mid-18th century.The bridge is a popular spot for tourists and locals alike, as it offers stunning views of several iconic London landmarks, including the Houses of Parliament, Big Ben, and the London Eye. It is also a busy thoroughfare for commuters and vehicles, with an estimated 50,000 people and 20,000 vehicles crossing the bridge every day."
+      
+    },
+    {
+      "id": "64362a3dde536a37dbbfed31",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img02.jpg",
+      "place_name":"Bali, Indonesia",
+      "location":"Indonesia",
+      "price":150,
+      "reating":4.9,
+      "total_reating":30,
+      "description":"Bali is an Indonesian island located in the westernmost end of the Lesser Sunda Islands, lying between Java to the west and Lombok to the east. Bali is often referred to as the 'Island of the Gods' due to its stunning natural beauty and rich culture. The island is renowned for its pristine beaches, clear blue waters, and stunning coral reefs, which make it a popular destination for surfers, divers, and beach lovers. Bali is also home to several active volcanoes, rice terraces, and lush jungles, which provide a dramatic backdrop for the island's stunning natural scenery. Bali is home to a vibrant culture, with a rich history and unique traditions that have been preserved for centuries. The island is famous for its Balinese Hindu temples, which are scattered throughout the island and are some of the most impressive architectural landmarks in Indonesia. Balinese dance and music are also an integral part of the island's culture, with traditional performances often taking place at temples, festivals, and ceremonies."
+    },
+    {
+      "id": "64362a3db585f641ff743e84",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img03.jpg",
+      "place_name":"Snow Mountains, Thailand",
+      "location":"Thailand",
+      "price":500,
+      "reating":5.0,
+      "total_reating":20,
+      "description":""
+    },
+    {
+      "id": "64362a3d05666b4b0e84211b",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img04.jpg",
+      "place_name":"Beautiful Sunrise, Thailand",
+      "location":"Thailand",
+      "price":200,
+      "reating":4.9,
+      "total_reating":45,
+      "description":""
+    },
+    {
+      "id": "64362a3dfca9cd0684945b51",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img05.jpg",
+      "place_name":"Nusa Pendia Bali, Indonesia",
+      "location":"Indonesia",
+      "price":400,
+      "reating":4.9,
+      "total_reating":60,
+      "description":""
+    },
+    {
+      "id": "64362a3d53364a70d9e46167",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img06.jpg",
+      "place_name":"Cherry Blossoms Spring",
+      "location":"Japan",
+      "price":300,
+      "reating":5.0,
+      "total_reating":40,
+      "description":""
+    },
+    {
+      "id": "64362a3d2627a2553cdf7e59",
+      "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img07.jpg",
+      "place_name":"Holmen Lofoten",
+      "location":"France",
+      "price":500,
+      "reating":5.0,
+      "total_reating":25,
+      "description":""
+    },
+    {
+      "id": "64362a3d21c1dafbaa2b9af1",
+      "travel_place":"https://cdn.pixabay.com/photo/2017/02/18/08/49/island-2076832_960_720.jpg",
+      "place_name":"Phang nga Bay, Thailand",
+      "location":"Thailand",
+      "price":400,
+      "reating":4.9,
+      "total_reating":50,
+      "description":""
+    }
+  ]
