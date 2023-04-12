@@ -11,7 +11,7 @@ const Places = () => {
   },[])
 
   return (
-    <div className='py-20'>
+    <div className='py-10'>
         <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                 {places.map((place)=><Place key={place.id} place={place}></Place>)}
