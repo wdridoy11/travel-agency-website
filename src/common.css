@@ -3,3 +3,9 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+.container{
+    max-width: 1400px;
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px; 
+}
