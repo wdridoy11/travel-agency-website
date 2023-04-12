@@ -6,8 +6,8 @@ import "./common.css"
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from './Components/Layout/Layout';
 import Home from './Components/Home/Home';
-import Place from './Components/Place/Place';
 import Hotel from './Components/Hotel/Hotel';
+import Places from './Components/Place/Places';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path:"place",
-        element:<Place />
+        element:<Places />
       },
       {
         path:"hotel",
