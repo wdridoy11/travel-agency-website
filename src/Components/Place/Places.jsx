@@ -5,7 +5,7 @@ const Places = () => {
 
   const [places,setPlaces]=useState([]);
   useEffect(()=>{
-    fetch("travelPlace.json")
+    fetch("travelplace.json")
     .then((res)=>res.json())
     .then((data)=>setPlaces(data))
   },[])

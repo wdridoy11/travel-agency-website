@@ -1,12 +1,14 @@
 [
     {
-      "_id": "64362a3d37b9b4760762badd",
+      "id": "64362a3d37b9b4760762badd",
       "place_name":"Westminister Bridge",
       "travel_place":"https://wdridoy11.github.io/travel-website/images/tour-img01.jpg",
       "location":"London",
       "price":100,
       "reating":4.9,
       "total_reating":50,
+      "phone":"123-456-7890",
+      "email":"example@gmail.com",
       "description":"Westminster Bridge is a famous bridge that spans the River Thames in London, England. It connects the districts of Westminster on the north side of the river with Lambeth on the south side. The bridge is one of the city's most iconic landmarks and is known for its stunning views of some of London's most famous landmarks. The bridge has a total of seven spans, with the central span being the longest at 98 meters. It is made of cast iron and has a distinctive green color, which adds to its charm. The bridge was designed by architect Thomas Page and opened in 1862, replacing an earlier bridge that had been in place since the mid-18th century.The bridge is a popular spot for tourists and locals alike, as it offers stunning views of several iconic London landmarks, including the Houses of Parliament, Big Ben, and the London Eye. It is also a busy thoroughfare for commuters and vehicles, with an estimated 50,000 people and 20,000 vehicles crossing the bridge every day."
       
     },
@@ -18,6 +20,8 @@
       "price":150,
       "reating":4.9,
       "total_reating":30,
+      "phone":"555-555-1212",
+      "email":"john.doe@gmail.com",
       "description":"Bali is an Indonesian island located in the westernmost end of the Lesser Sunda Islands, lying between Java to the west and Lombok to the east. Bali is often referred to as the 'Island of the Gods' due to its stunning natural beauty and rich culture. The island is renowned for its pristine beaches, clear blue waters, and stunning coral reefs, which make it a popular destination for surfers, divers, and beach lovers. Bali is also home to several active volcanoes, rice terraces, and lush jungles, which provide a dramatic backdrop for the island's stunning natural scenery. Bali is home to a vibrant culture, with a rich history and unique traditions that have been preserved for centuries. The island is famous for its Balinese Hindu temples, which are scattered throughout the island and are some of the most impressive architectural landmarks in Indonesia. Balinese dance and music are also an integral part of the island's culture, with traditional performances often taking place at temples, festivals, and ceremonies."
     },
     {

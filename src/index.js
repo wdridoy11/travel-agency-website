@@ -8,6 +8,7 @@ import Layout from './Components/Layout/Layout';
 import Home from './Components/Home/Home';
 import Hotel from './Components/Hotel/Hotel';
 import Places from './Components/Place/Places';
+import PlaceDetails from './Components/Place/PlaceDetails';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
       {
         path:"place",
         element:<Places />
+      },
+      {
+       path:"place/:PlaceDetails",
+       element:<PlaceDetails />,
+       loader:({params})=>fetch(`/travelPlace.json`)
       },
       {
         path:"hotel",
