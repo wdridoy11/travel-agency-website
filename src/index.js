@@ -9,6 +9,7 @@ import Home from './Components/Home/Home';
 import Hotel from './Components/Hotel/Hotel';
 import Places from './Components/Place/Places';
 import PlaceDetails from './Components/Place/PlaceDetails';
+import Logo from './Components/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path:"hotel",
         element:<Hotel />
+      },
+      {
+        path:"login",
+        element:<Logo />
       }
     ]
   },

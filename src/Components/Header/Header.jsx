@@ -14,6 +14,7 @@ const Header = () => {
                     <Link className='inline-block mx-3 text-base font-semibold' to="/">Home</Link>
                     <Link className='inline-block mx-3 text-base font-semibold' to="/place">Place</Link>
                     <Link className='inline-block mx-3 text-base font-semibold' to="/hotel">Hotel</Link>
+                    <Link className='inline-block mx-3 text-base font-semibold' to="/login">Login</Link>
                 </nav>
             </div>
         </div>
