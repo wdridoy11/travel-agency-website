@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Logo from '../../image/logo.png';
+import Logo from '../../../assets/logo.png';
 import {FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='container mx-auto'>
             <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5'>
                 <div>
-                    <img className='w-16 h-16' src={Logo} alt="Logo" />
+                    <img width='100' src={Logo} alt="Logo" />
                     <div className='mt-3'>
                         <p className='mb-1 text-base font-medium'><strong>Address:</strong> AAAAAAAAAAAAAA</p>
                         <p className='mb-1 text-base font-medium'><strong>Phone:</strong> 01722824160</p>
