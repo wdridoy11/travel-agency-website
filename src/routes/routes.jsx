@@ -3,8 +3,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from '../layout/Main';
 import Places from '../pages/place/Places';
 import Home from '../pages/home/home/Home';
-import Login from '../../src/pages/login/Login'
+import Login from '../pages/login/Login'
 import SignupForm from '../pages/Signup/SignupForm';
+import PlaceDetails from '../pages/place/PlaceDetails';
 const router=createBrowserRouter([
     {
         path:"/",
@@ -20,13 +21,9 @@ const router=createBrowserRouter([
               },
               {
                 path: "place/:PlaceDetails",
-                // element: <PlaceDetails />,
+                element: <PlaceDetails></PlaceDetails>,
                 loader: ({ params }) => fetch(`/travelPlace.json`),
               },
-              {
-                path: "create_account",
-                // element: <CreateAccount></CreateAccount>,
-              }
         ]
     },
     {

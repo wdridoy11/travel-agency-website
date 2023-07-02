@@ -101,7 +101,7 @@ const userInfo={
 
   return (
       <AuthContext.Provider value={userInfo}>
-            {children}
+          {children}
       </AuthContext.Provider>
   )
 }
