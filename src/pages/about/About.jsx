@@ -7,7 +7,7 @@ const About = () => {
         <div className='container'>
             <div className='grid md:grid-cols-2 gap-10'>
                 <div>
-                    <img className='w-full h-96 object-cover' src={aboutImage} alt="" />
+                    <img className='w-full h-96 object-cover rounded-md' src={aboutImage} alt="" />
                 </div>
                 <div>
                     <h3 className='text-3xl font-semibold '>About Us</h3>
