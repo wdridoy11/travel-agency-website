@@ -26,7 +26,7 @@ const Hero = () => {
                 <div className='col-span-1'>
                     <h1 className='text-white text-5xl font-bold mb-3'>Cox's bazar</h1>
                     <p className='text-white text-base font-normal mb-4'>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
-                    <button className=' text-white bg-[#ff7e01] border-0 font-medium px-8 py-3 rounded-md hover:bg-black hover:text-white duration-500'>Booking <FaArrowRight className="inline-block ml-1"></FaArrowRight></button>
+                    <button className='text-white bg-[#ff7e01] border-0 font-medium px-8 py-3 rounded-md hover:bg-black hover:text-white duration-500'>Booking <FaArrowRight className="inline-block ml-1"></FaArrowRight></button>
                 </div>
                 <div className="col-span-2 hero-slider">
                     <Swiper

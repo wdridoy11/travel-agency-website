@@ -2,9 +2,11 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation,faPhone,faEnvelope,faDollar,faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import Contact from './Contact';
 
 const PlaceDetail = (props) => {
-    const {travel_place,description,location,reating,place_name,price,phone,email}=props.detail;
+
+    const {travel_place,description,location,reating,place_name,price,phone,email,total_reating}= props.detail;
 
   return (
     <div>
@@ -26,25 +28,25 @@ const PlaceDetail = (props) => {
                               <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faLocation} />
                               <span className="text-xl font-medium">{location}</span>
                             </div>
-                            <div className='mb-2'>
+                            <div className='mb-5'>
                               <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faStar} />
-                              <span className="text-xl font-medium">({reating})</span>
+                              <span className="text-xl font-medium">{reating} ({total_reating})</span>
                             </div>
+                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500'>Booking </Link>
                         </div>
                         <div className='bg-[#F8F8FE] p-10 rounded-lg'>
                             <h3 className='text-black text-2xl mb-3 font-semibold'>Contact Info</h3>
-                            
-                            <div className='mb-2'>
+                            <Contact></Contact>
+                            {/* <div className='mb-2'>
                               <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faPhone} />
                               <span className="text-xl font-medium">{phone}</span>
                             </div>
-                            <div className='mb-2'>
+                            <div className='mb-5'>
                               <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faEnvelope} />
                               <span className="text-xl font-medium">{email}</span>
                             </div>
-                            <Link className="bg-[#faa935] text-white px-5 py-2 rounded-lg mt-5 inline-block hover:bg-black transition duration-150">Contact Now</Link>
+                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500'>Contact Now</Link> */}
                         </div>
-                        
                     </div>
                 </div>
             </div>
