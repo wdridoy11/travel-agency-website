@@ -7,7 +7,7 @@ const Header = () => {
 
   const {user} = useContext(AuthContext)
   const navMenu=<>
-    <li><Link>Home</Link></li>
+    <li><Link to={'/'}>Home</Link></li>
     <li><Link>Place</Link></li>
     {user ? <>
       <Link className='bg-[#ff7e01] px-10 py-2 flex items-center text-base font-medium text-white rounded-full hover:bg-black duration-500'>LogOut</Link>

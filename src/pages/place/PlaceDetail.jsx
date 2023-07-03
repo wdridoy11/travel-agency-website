@@ -9,7 +9,7 @@ const PlaceDetail = (props) => {
   return (
     <div>
         <div>
-          <img className='w-full h-[800px] object-cover object-center' src={travel_place} alt="" />
+            <img className='w-full h-[90vh] object-cover object-center' src={travel_place} alt="travel_place" /> 
             <div className='container'>
                 <div className='my-20 grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
                     <div className='col-span-1 md:col-span-2'>
