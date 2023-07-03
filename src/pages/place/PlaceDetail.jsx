@@ -1,10 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocation,faPhone,faEnvelope,faDollar} from '@fortawesome/free-solid-svg-icons'
+import { faLocation,faPhone,faEnvelope,faDollar,faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
 const PlaceDetail = (props) => {
-    const {travel_place,description,location,place_name,price,phone,email}=props.detail;
+    const {travel_place,description,location,reating,place_name,price,phone,email}=props.detail;
 
   return (
     <div>
@@ -16,25 +16,35 @@ const PlaceDetail = (props) => {
                         <h3 className="text-black text-3xl my-3 font-semibold">{place_name}</h3>
                         <p>{description}</p>
                     </div>
-                    <div className='bg-[#F8F8FE] p-10 rounded-lg'>
-                        <div className='mb-10'>
-                          <FontAwesomeIcon className='text-[#faa935] mr-2 text-2xl' icon={faDollar} />
-                          <span className="text-[#ff7e01] text-2xl font-semibold">{price} (Per Person)</span>
+                    <div>
+                        <div className='bg-[#F8F8FE] p-10 rounded-lg mb-5'>
+                            <div className='mb-5'>
+                                <FontAwesomeIcon className='text-[#faa935] mr-2 text-2xl' icon={faDollar} />
+                                <span className="text-[#ff7e01] text-2xl font-semibold">{price} (Per Person)</span>
+                            </div>
+                            <div className='mb-2'>
+                              <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faLocation} />
+                              <span className="text-xl font-medium">{location}</span>
+                            </div>
+                            <div className='mb-2'>
+                              <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faStar} />
+                              <span className="text-xl font-medium">({reating})</span>
+                            </div>
                         </div>
-                        <h3 className='text-black text-2xl mb-3 font-semibold'>Contact Info</h3>
-                        <div className='mb-2'>
-                          <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faLocation} />
-                          <span className="text-xl font-medium">{location}</span>
+                        <div className='bg-[#F8F8FE] p-10 rounded-lg'>
+                            <h3 className='text-black text-2xl mb-3 font-semibold'>Contact Info</h3>
+                            
+                            <div className='mb-2'>
+                              <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faPhone} />
+                              <span className="text-xl font-medium">{phone}</span>
+                            </div>
+                            <div className='mb-2'>
+                              <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faEnvelope} />
+                              <span className="text-xl font-medium">{email}</span>
+                            </div>
+                            <Link className="bg-[#faa935] text-white px-5 py-2 rounded-lg mt-5 inline-block hover:bg-black transition duration-150">Contact Now</Link>
                         </div>
-                        <div className='mb-2'>
-                          <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faPhone} />
-                          <span className="text-xl font-medium">{phone}</span>
-                        </div>
-                        <div className='mb-2'>
-                          <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faEnvelope} />
-                          <span className="text-xl font-medium">{email}</span>
-                        </div>
-                        <Link className="bg-[#faa935] text-white px-5 py-2 rounded-lg mt-5 inline-block hover:bg-black transition duration-150">Contact Now</Link>
+                        
                     </div>
                 </div>
             </div>
