@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocation} from '@fortawesome/free-solid-svg-icons'
+import { faLocation,faPhone,faEnvelope,faDollar,faStar} from '@fortawesome/free-solid-svg-icons'
 
 const Booking = () => {
   return (
@@ -12,16 +12,29 @@ const Booking = () => {
                     <form>
                         <div className='grid md:grid-cols-2 gap-3'>
                             <div className='mb-4'>
-                                <label htmlFor="name" className='text-base font-normal text-slate-600 mb-1 block'>Your Name</label>
+                                <label htmlFor="fname" className='text-base font-normal text-slate-600 mb-1 block'>Your Name</label>
                                 <input 
                                     type="text" 
-                                    name='name' 
-                                    id='name' 
-                                    placeholder="Your Name" 
+                                    name='fname' 
+                                    id='fname' 
+                                    placeholder="First Name" 
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                     required 
                                 />
                             </div>
+                            <div className='mb-4'>
+                                <label htmlFor="lname" className='text-base font-normal text-slate-600 mb-1 block'>Your Name</label>
+                                <input 
+                                    type="text" 
+                                    name='lname' 
+                                    id='lname' 
+                                    placeholder="Last Name" 
+                                    className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
+                                    required 
+                                />
+                            </div>
+                        </div>
+                        <div className='grid md:grid-cols-2 gap-3'>
                             <div className='mb-4'>
                                 <label htmlFor="email" className='text-base font-normal text-slate-600 mb-1 block'>Your Email</label>
                                 <input 
@@ -29,6 +42,19 @@ const Booking = () => {
                                     name='email' 
                                     id='email' 
                                     placeholder="Your Email" 
+                                    className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
+                                    required 
+                                />
+                            </div>
+                            <div className='mb-4'>
+                                <label htmlFor="person" className='text-base font-normal text-slate-600 mb-1 block'>Person</label>
+                                <input 
+                                    type="number" 
+                                    name='person' 
+                                    id='person' 
+                                    placeholder="Person" 
+                                    defaultValue="1"
+                                    min="1"
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                     required 
                                 />
@@ -109,7 +135,7 @@ const Booking = () => {
                         </div>
                         <input 
                             type="submit" 
-                            className='text-white w-full cursor-pointer bg-[#ff7e01] border-0 font-medium text-center py-2 rounded-md hover:bg-black hover:text-white duration-500' 
+                            className='text-white w-full cursor-pointer bg-[#ff7e01] border-0 font-medium text-center py-3 rounded-md hover:bg-black hover:text-white duration-500' 
                             value="Booking"
                         />
                     </form>
@@ -128,6 +154,40 @@ const Booking = () => {
                         </div>
                     </div>
                     <div className='divider'></div>
+                    <div>
+                        <div className=' flex justify-between'>
+                            <p className="text-lg text-slate-600 font-medium">Price per person</p>
+                            <p className="text-lg text-slate-600 font-medium">$100</p>
+                        </div>
+                        <div className=' flex justify-between'>
+                            <p className="text-lg text-slate-600 font-medium">Location</p>
+                            <p className="text-lg text-slate-600 font-medium">London</p>
+                        </div>
+                        <div className=' flex justify-between'>
+                            <p className="text-lg text-slate-600 font-medium">Duration</p>
+                            <p className="text-lg text-slate-600 font-medium">5 Day</p>
+                        </div>
+                        <div className='flex gap-2 my-5'>
+                            <input 
+                                type="text" 
+                                name='coupon' 
+                                id='coupon' 
+                                placeholder="Coupon code" 
+                                className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
+                                required 
+                            />
+                            <button className='text-white cursor-pointer bg-[#ff7e01] border-0 font-medium text-center px-10 py-3 rounded-md hover:bg-black hover:text-white duration-500'>Apply</button>
+                        </div>
+                        <div className=' flex justify-between'>
+                            <p className="text-lg text-slate-600 font-medium">Price</p>
+                            <p className="text-lg text-slate-600 font-medium">$100</p>
+                        </div>
+                        <div className='divider'></div>
+                        <div className=' flex justify-between'>
+                            <p className="text-xl text-slate-600 font-semibold">Pay Amount</p>
+                            <p className="text-xl text-slate-600 font-semibold">$100</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
