@@ -32,20 +32,11 @@ const PlaceDetail = (props) => {
                               <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faStar} />
                               <span className="text-xl font-medium">{reating} ({total_reating})</span>
                             </div>
-                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500'>Booking </Link>
+                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500' to={`/booking`}>Booking</Link>
                         </div>
                         <div className='bg-[#F8F8FE] p-10 rounded-lg'>
-                            <h3 className='text-black text-2xl mb-3 font-semibold'>Contact Info</h3>
+                            <h3 className='text-black text-2xl mb-3 font-semibold'>Contact Now!</h3>
                             <Contact></Contact>
-                            {/* <div className='mb-2'>
-                              <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faPhone} />
-                              <span className="text-xl font-medium">{phone}</span>
-                            </div>
-                            <div className='mb-5'>
-                              <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faEnvelope} />
-                              <span className="text-xl font-medium">{email}</span>
-                            </div>
-                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500'>Contact Now</Link> */}
                         </div>
                     </div>
                 </div>

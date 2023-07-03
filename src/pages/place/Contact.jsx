@@ -24,8 +24,8 @@ const Contact = () => {
             </div>
             <div className='mb-5'>
                 <textarea 
-                    className="textarea textarea-bordered border-slate-300  w-full" 
-                    placeholder="Message">
+                    className="textarea textarea-bordered outline-none bg-transparent placeholder-slate-600 border-slate-300 rounded-md w-full" 
+                    placeholder="Message...">
                 </textarea>
             </div>
             <input 
