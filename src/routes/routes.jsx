@@ -26,8 +26,10 @@ const router=createBrowserRouter([
                 loader: ({ params }) => fetch(`/travelPlace.json`),
               },
               {
-                path: "booking",
-                element: <Booking></Booking>
+                path: "booking/:bookingDetails",
+                element: <Booking></Booking>,
+                loader:({params})=>fetch(`/travelPlace.json`)
+                
               },
         ]
     },

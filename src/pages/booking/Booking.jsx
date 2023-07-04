@@ -1,8 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocation,faPhone,faEnvelope,faDollar,faStar} from '@fortawesome/free-solid-svg-icons'
+import { faLocation } from '@fortawesome/free-solid-svg-icons'
+import { useParams } from 'react-router-dom'
 
-const Booking = () => {
+const Booking = (props) => {
+    const {bookingDetails} =useParams();
+    console.log(bookingDetails)
   return (
     <div className='py-20'>
         <div className='container mx-auto px-5'>
@@ -75,13 +78,13 @@ const Booking = () => {
                             <div>
                                 <label className='text-base font-normal text-slate-600 mb-1 block'>choose date</label>
                                 <select className="select w-full border border-slate-300">
-                                  <option disabled selected>Date</option>
-                                  <option>05/07/2023--10/07/2023</option>
-                                  <option>15/07/2023--20/07/2023</option>
-                                  <option>25/07/2023--30/07/2023</option>
-                                  <option>05/08/2023--10/08/2023</option>
-                                  <option>15/08/2023--20/08/2023</option>
-                                  <option>25/08/2023--30/08/2023</option>
+                                    <option disabled selected>Date</option>
+                                    <option>05/07/2023--10/07/2023</option>
+                                    <option>15/07/2023--20/07/2023</option>
+                                    <option>25/07/2023--30/07/2023</option>
+                                    <option>05/08/2023--10/08/2023</option>
+                                    <option>15/08/2023--20/08/2023</option>
+                                    <option>25/08/2023--30/08/2023</option>
                                 </select>
                             </div>
                         </div>

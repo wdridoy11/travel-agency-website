@@ -6,7 +6,7 @@ import Contact from './Contact';
 
 const PlaceDetail = (props) => {
 
-    const {travel_place,description,location,reating,place_name,price,phone,email,total_reating}= props.detail;
+    const {travel_place,description,location,reating,place_name,price,phone,email,total_reating,id}= props.detail;
 
   return (
     <div>
@@ -32,7 +32,7 @@ const PlaceDetail = (props) => {
                               <FontAwesomeIcon className='text-[#faa935] mr-2' icon={faStar} />
                               <span className="text-xl font-medium">{reating} ({total_reating})</span>
                             </div>
-                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500' to={`/booking`}>Booking</Link>
+                            <Link className='text-white bg-[#ff7e01] border-0 font-medium block text-center py-2 rounded-md hover:bg-black hover:text-white duration-500' to={`/booking/${id}`}>Booking</Link>
                         </div>
                         <div className='bg-[#F8F8FE] p-10 rounded-lg'>
                             <h3 className='text-black text-2xl mb-3 font-semibold'>Contact Now!</h3>
