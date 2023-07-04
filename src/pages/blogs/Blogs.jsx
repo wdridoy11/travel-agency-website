@@ -9,7 +9,7 @@ const Blogs = () => {
         .then((res)=>res.json())
         .then((data)=>setBlogs(data))
     },[])
-console.log(blogs)
+    
   return (
     <div className='pt-10 pb-20'>
         <div className='container mx-auto px-5'>
