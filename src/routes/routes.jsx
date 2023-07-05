@@ -8,6 +8,7 @@ import Home from '../pages/home/home/Home';
 import Booking from '../pages/booking/Booking';
 import SignupForm from '../pages/Signup/SignupForm';
 import PlaceDetail from '../pages/place/PlaceDetail';
+import BlogDetails from '../pages/blogs/BlogDetails';
 
 const router=createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const router=createBrowserRouter([
                 path: "booking/:id",
                 element: <Booking></Booking>,
                 loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`),
+              },
+              {
+                path: "blog/:id",
+                element:<BlogDetails></BlogDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
               },
         ]
     },

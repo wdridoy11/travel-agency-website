@@ -89,14 +89,13 @@ useEffect(()=>{
 
 const userInfo={
   user,
+  logOut,
   signIn,
   resetPassword,
-  createAccountUsingGoogle,
-  createAccountUsingEmail,
-  createAccountUsingGithub,
   userEmailVerification,
-  logOut
-
+  createAccountUsingEmail,
+  createAccountUsingGoogle,
+  createAccountUsingGithub,
 }
 
   return (
