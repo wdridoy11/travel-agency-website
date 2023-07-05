@@ -7,7 +7,7 @@ import { AuthContext } from '../../providers/AuthProvider'
 const Booking = () => {
    const dataLoad = useLoaderData();
    const {user} = useContext(AuthContext);
-   const {place_name,travel_place, location, price, } = dataLoad;
+   const {place_name,travel_place, location, price } = dataLoad;
   return (
     <div className='py-20'>
         <div className='container mx-auto px-5'>
