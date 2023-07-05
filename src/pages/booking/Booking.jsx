@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
-import { useParams } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
+import { AuthContext } from '../../providers/AuthProvider'
 
-const Booking = (props) => {
-    const {bookingDetails} =useParams();
-    console.log(bookingDetails)
+const Booking = () => {
+   const dataLoad = useLoaderData();
+   const {user} = useContext(AuthContext);
+   const {place_name,travel_place, location, price, } = dataLoad;
   return (
     <div className='py-20'>
         <div className='container mx-auto px-5'>
@@ -44,8 +46,10 @@ const Booking = (props) => {
                                     type="email" 
                                     name='email' 
                                     id='email' 
+                                    defaultValue={user?.email}
                                     placeholder="Your Email" 
-                                    className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
+                                    className="bg-transparent px-5 py-3 outline-none bg-slate-300 placeholder-slate-600 border border-slate-300 rounded-md w-full cursor-not-allowed"
+                                    readOnly
                                     required 
                                 />
                             </div>
@@ -146,13 +150,13 @@ const Booking = (props) => {
                 <div className='col-span-2 shadow-md p-7 rounded-md border border-slate-200'>
                     <div className='flex gap-5'>
                         <div>
-                            <img className='rounded-md' width="100" src="https://cdn.pixabay.com/photo/2023/06/28/21/48/dragonfly-8095243_1280.jpg" alt="" />
+                            <img className='rounded-md' width="100" src={travel_place} alt="" />
                         </div>
                         <div>
-                            <h4 className='text-lg font-medium text-black'>Westminister Bridge</h4>
+                            <h4 className='text-lg font-medium text-black'>{place_name}</h4>
                             <div className='mt-1'>
                               <FontAwesomeIcon className='text-slate-600 mr-2' icon={faLocation} />
-                              <span className="text-base text-slate-600 font-medium">London</span>
+                              <span className="text-base text-slate-600 font-medium">{location}</span>
                             </div>
                         </div>
                     </div>
@@ -160,11 +164,11 @@ const Booking = (props) => {
                     <div>
                         <div className=' flex justify-between'>
                             <p className="text-lg text-slate-600 font-medium">Price per person</p>
-                            <p className="text-lg text-slate-600 font-medium">$100</p>
+                            <p className="text-lg text-slate-600 font-medium">{price}</p>
                         </div>
                         <div className=' flex justify-between'>
                             <p className="text-lg text-slate-600 font-medium">Location</p>
-                            <p className="text-lg text-slate-600 font-medium">London</p>
+                            <p className="text-lg text-slate-600 font-medium">{location}</p>
                         </div>
                         <div className=' flex justify-between'>
                             <p className="text-lg text-slate-600 font-medium">Duration</p>

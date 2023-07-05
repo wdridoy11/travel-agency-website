@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import Logo from '../../../assets/logo.png'
-import Container from '../container/Container'
-import { AuthContext } from '../../../providers/AuthProvider'
+import { Link } from 'react-router-dom';
+import Logo from '../../../assets/logo.png';
+import Container from '../container/Container';
+import { AuthContext } from '../../../providers/AuthProvider';
+
 const Header = () => {
 
   const {user} = useContext(AuthContext)
@@ -15,8 +16,6 @@ const Header = () => {
       <Link className='bg-[#ff7e01] px-10 py-2 flex items-center text-base font-medium text-white rounded-full hover:bg-black duration-500' to={'/login'}>Login</Link>
       </>
     }
-    
-    
   </>
 
   return (
