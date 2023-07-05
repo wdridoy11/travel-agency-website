@@ -48,7 +48,7 @@ const Booking = () => {
                                     id='email' 
                                     defaultValue={user?.email}
                                     placeholder="Your Email" 
-                                    className="bg-transparent px-5 py-3 outline-none bg-slate-300 placeholder-slate-600 border border-slate-300 rounded-md w-full cursor-not-allowed"
+                                    className="px-5 py-3 outline-none bg-slate-300 placeholder-slate-600 border border-slate-300 rounded-md w-full cursor-not-allowed"
                                     readOnly
                                     required 
                                 />
