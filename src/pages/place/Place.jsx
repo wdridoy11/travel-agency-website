@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Place = (props) => {
   const {id,travel_place,location,place_name,reating,total_reating}=props.place;
-  console.log(props)
   return (
     <div>
       <div>

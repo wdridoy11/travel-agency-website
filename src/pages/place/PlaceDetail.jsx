@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import Contact from './Contact';
 
 const PlaceDetail = (props) => {
-
     const {travel_place,description,location,reating,place_name,price,phone,email,total_reating,id}= props.detail;
-
   return (
     <div>
         <div>
