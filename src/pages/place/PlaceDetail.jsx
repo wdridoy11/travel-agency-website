@@ -1,11 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation,faPhone,faEnvelope,faDollar,faStar} from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Contact from './Contact';
 
 const PlaceDetail = (props) => {
-    const {travel_place,description,location,reating,place_name,price,phone,email,total_reating,id}= props.detail;
+    const placeLoadData= useLoaderData();
+    const {travel_place,description,location,reating,place_name,price,phone,email,total_reating,id}= placeLoadData;
   return (
     <div>
         <div>

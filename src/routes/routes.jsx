@@ -1,12 +1,14 @@
 import React from 'react'
 import { createBrowserRouter } from "react-router-dom";
+// import pages
 import Main from '../layout/Main';
+import Login from '../pages/login/Login';
 import Places from '../pages/place/Places';
 import Home from '../pages/home/home/Home';
-import Login from '../pages/login/Login'
-import SignupForm from '../pages/Signup/SignupForm';
-import PlaceDetails from '../pages/place/PlaceDetails';
 import Booking from '../pages/booking/Booking';
+import SignupForm from '../pages/Signup/SignupForm';
+import PlaceDetail from '../pages/place/PlaceDetail';
+
 const router=createBrowserRouter([
     {
         path:"/",
@@ -21,15 +23,14 @@ const router=createBrowserRouter([
                 element: <Places></Places>,
               },
               {
-                path: "place/:PlaceDetails",
-                element: <PlaceDetails></PlaceDetails>,
-                loader: ({ params }) => fetch(`/travelPlace.json`),
+                path: "place/:id",
+                element: <PlaceDetail></PlaceDetail>,
+                loader: ({ params }) => fetch(`http://localhost:5000/places/${params.id}`),
               },
               {
                 path: "booking/:bookingDetails",
                 element: <Booking></Booking>,
-                loader:({params})=>fetch(`/travelPlace.json`)
-                
+                loader:({params})=>fetch(`http://localhost:5000/places`)
               },
         ]
     },

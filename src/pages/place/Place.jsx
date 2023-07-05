@@ -4,7 +4,7 @@ import { faLocation,faStar } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
 const Place = (props) => {
-  const {id,travel_place,location,place_name,reating,total_reating}=props.place;
+  const {_id,travel_place,location,place_name,reating,total_reating}=props.place;
   return (
     <div>
       <div>
@@ -31,7 +31,7 @@ const Place = (props) => {
                   <span>$100/</span>
                   <sub className="text-black font-medium">Per Person</sub>
                 </p>
-                <Link className="bg-[#faa935] text-white px-4 py-1 rounded-lg hover:bg-black transition duration-150" to={`/place/${id}`}>View Details</Link>
+                <Link className="bg-[#faa935] text-white px-4 py-1 rounded-lg hover:bg-black transition duration-150" to={`/place/${_id}`}>View Details</Link>
              </div>
           </div>
           </div>
