@@ -6,7 +6,7 @@ import { faLocation, faDollar, faStar} from '@fortawesome/free-solid-svg-icons'
 import Contact from './Contact';
 
 const PlaceDetail = () => {
-    const placeLoadData= useLoaderData();
+    const placeLoadData = useLoaderData();
     const {user} = useContext(AuthContext);
     const {travel_place, description, location, reating, place_name, price, total_reating, _id}= placeLoadData;
   return (
