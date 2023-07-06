@@ -17,10 +17,11 @@ const Gallery = () => {
         .then((data)=>setTravelGallery(data))
         .catch((err)=>console.log(err.message))
     },[])
-    // const onBeforeSlide = (detail) => {
-    //     const { index, prevIndex } = detail;
-    //     console.log(index, prevIndex);
-    // };
+
+    const onBeforeSlide = (detail) => {
+        const { index, prevIndex } = detail;
+        console.log(index, prevIndex);
+    };
     
 
   return (
@@ -31,6 +32,7 @@ const Gallery = () => {
                 {travelGallery.slice(0,9).map((gallery)=><LightGallery 
                     plugins={[lgZoom]}
                     mode="lg-fade"
+                    onBeforeSlide={onBeforeSlide}
                  >
                     <a 
                         href={gallery.img}
