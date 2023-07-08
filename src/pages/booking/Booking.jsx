@@ -3,18 +3,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthProvider'
+import { useForm } from 'react-hook-form'
+import Payment from '../payment/Payment'
 
 const Booking = () => {
    const dataLoad = useLoaderData();
    const {user} = useContext(AuthContext);
    const {place_name,travel_place, location, price } = dataLoad;
+   const { register, formState: { errors }, handleSubmit } = useForm();
+   const onSubmit = (data) =>{
+    // fetch(`http://localhost:5000/users`,{
+    //     method:"POST",
+    //     headers:{
+    //         "content-type":"application/json"
+    //     },
+    //     body:JSON.stringify(data)
+    // })
+    // .then((res)=>res.json())
+    // .then((data)=>console.log(data))
+    // .catch((error)=>console.log(error))
+   };
   return (
     <div className='py-20'>
         <div className='container mx-auto px-5'>
             <h3 className='text-slate-9000 text-3xl mb-10 font-semibold text-center'>Welcome to booking page</h3>
             <div className='grid grid-cols-1 lg:grid-cols-5 gap-5'>
                 <div className='col-span-3'>
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='grid md:grid-cols-2 gap-3'>
                             <div className='mb-4'>
                                 <label htmlFor="fname" className='text-base font-normal text-slate-600 mb-1 block'>Your Name</label>
@@ -23,9 +38,10 @@ const Booking = () => {
                                     name='fname' 
                                     id='fname' 
                                     placeholder="First Name" 
+                                    {...register("fname",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
-                                    required 
                                 />
+                                {errors.fname?.type === "required" && (<p role="alert">First name is required</p>)}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="lname" className='text-base font-normal text-slate-600 mb-1 block'>Your Name</label>
@@ -34,9 +50,10 @@ const Booking = () => {
                                     name='lname' 
                                     id='lname' 
                                     placeholder="Last Name" 
+                                    {...register("lname",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
-                                    required 
                                 />
+                                {errors.lname?.type === "required" && (<p role="alert">Lname name is required</p>)}
                             </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
@@ -46,12 +63,13 @@ const Booking = () => {
                                     type="email" 
                                     name='email' 
                                     id='email' 
-                                    defaultValue={user?.email}
                                     placeholder="Your Email" 
+                                    {...register("email")}
+                                    value={user?.email}
                                     className="px-5 py-3 outline-none bg-slate-300 placeholder-slate-600 border border-slate-300 rounded-md w-full cursor-not-allowed"
                                     readOnly
-                                    required 
                                 />
+                                {/* {errors.email?.type === "required" && (<p role="alert">Email is required</p>)} */}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="person" className='text-base font-normal text-slate-600 mb-1 block'>Person</label>
@@ -62,9 +80,10 @@ const Booking = () => {
                                     placeholder="Person" 
                                     defaultValue="1"
                                     min="1"
+                                    {...register("person",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
-                                    required 
                                 />
+                                {errors.person?.type === "required" && (<p role="alert">Person is required</p>)}
                             </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
@@ -75,11 +94,12 @@ const Booking = () => {
                                     name='phone' 
                                     id='phone' 
                                     placeholder="Your Phone" 
+                                    {...register("phone",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
-                                    required 
                                 />
+                                {errors.phone?.type === "required" && (<p role="alert">Number is required</p>)}
                             </div>
-                            <div>
+                            {/* <div>
                                 <label className='text-base font-normal text-slate-600 mb-1 block'>choose date</label>
                                 <select className="select w-full border border-slate-300">
                                     <option disabled selected>Date</option>
@@ -90,7 +110,7 @@ const Booking = () => {
                                     <option>15/08/2023--20/08/2023</option>
                                     <option>25/08/2023--30/08/2023</option>
                                 </select>
-                            </div>
+                            </div> */}
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
                             <div className='mb-4'>
@@ -100,9 +120,10 @@ const Booking = () => {
                                     name='city' 
                                     id='city' 
                                     placeholder="Your City" 
+                                    {...register("city",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
-                                    required 
                                 />
+                                {errors.city?.type === "required" && (<p role="alert">City name is required</p>)}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="state" className='text-base font-normal text-slate-600 mb-1 block'>State/Province/Region</label>
@@ -111,9 +132,11 @@ const Booking = () => {
                                     name='state' 
                                     id='state' 
                                     placeholder="State/Province/Region" 
+                                    {...register("state",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                     required 
                                 />
+                                {errors.state?.type === "required" && (<p role="alert">State name is required</p>)}
                             </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3 mb-5'>
@@ -124,9 +147,10 @@ const Booking = () => {
                                     name='postal' 
                                     id='postal' 
                                     placeholder="ZIP code/Postal code" 
+                                    {...register("postal",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
-                                    required 
                                 />
+                                {errors.postal?.type === "required" && (<p role="alert">ZIP code is required</p>)}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="address" className='text-base font-normal text-slate-600 mb-1 block'>Your Address</label>
@@ -135,9 +159,14 @@ const Booking = () => {
                                     name='address' 
                                     id='address' 
                                     placeholder="Enter your Address" 
+                                    {...register("address",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                     required 
                                 />
+                                {errors.address?.type === "required" && (<p role="alert">Address is required</p>)}
+                            </div>
+                            <div>
+                                <Payment></Payment>
                             </div>
                         </div>
                         <input 
