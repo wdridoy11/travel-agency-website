@@ -12,10 +12,13 @@ import {
   createUserWithEmailAndPassword,
   } from "firebase/auth";
 import app from '../firebase/Firebase';
+import axios from 'axios';
 export const AuthContext = createContext(null);
+
 
 const AuthProvider = ({children}) => {
 const [user,setUser]=useState(null);
+const [loading, setLoading] = useState(true);
 const auth=getAuth(app);
 
 // create account using google 
@@ -81,6 +84,15 @@ const resetPassword=(email)=>{
 useEffect(()=>{
   const unSubscribe = onAuthStateChanged(auth,currentUser=>{
     setUser(currentUser)
+    if(currentUser){
+      axios.post(`http://localhost:5000/jwt`,{email:currentUser.email})
+      .then((data)=>{
+        localStorage.getItem("access-token",data.data.token)
+        setLoading(false)
+      })
+    }else{
+      localStorage.removeItem('access-token')
+    }
   })
   return ()=>{
     unSubscribe();
@@ -91,6 +103,7 @@ const userInfo={
   user,
   logOut,
   signIn,
+  loading,
   resetPassword,
   userEmailVerification,
   createAccountUsingEmail,

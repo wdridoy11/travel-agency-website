@@ -6,12 +6,22 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
 
-  const {user} = useContext(AuthContext)
+  const {user,logOut} = useContext(AuthContext);
+  const userLogOut=()=>{
+    logOut()
+    .then((res)=>{
+      const user = res.user;
+      console.log(user)
+    })
+    .catch((err)=>{
+      console.log(err.message)
+    })
+  }
   const navMenu=<>
     <li><Link to={'/'}>Home</Link></li>
     <li><Link>Place</Link></li>
     {user ? <>
-      <Link className='bg-[#ff7e01] px-10 py-2 flex items-center text-base font-medium text-white rounded-full hover:bg-black duration-500'>LogOut</Link>
+      <Link className='bg-[#ff7e01] px-10 py-2 flex items-center text-base font-medium text-white rounded-full hover:bg-black duration-500' onClick={userLogOut}>LogOut</Link>
       </>:<>
       <Link className='bg-[#ff7e01] px-10 py-2 flex items-center text-base font-medium text-white rounded-full hover:bg-black duration-500' to={'/login'}>Login</Link>
       </>
