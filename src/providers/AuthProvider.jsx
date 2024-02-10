@@ -19,6 +19,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
 const [user,setUser]=useState(null);
 const [loading, setLoading] = useState(true);
+
 const auth=getAuth(app);
 
 // create account using google 
@@ -52,11 +53,13 @@ const createAccountUsingGithub=()=>{
 
 // create account using email and password
 const createAccountUsingEmail=(email,password)=>{
+  setLoading(true)
   return createUserWithEmailAndPassword(auth,email,password);
 };
 
 // user login
 const signIn=(email,password)=>{
+  setLoading(true)
   return signInWithEmailAndPassword(auth,email,password)
 };
 
@@ -73,6 +76,7 @@ const userEmailVerification=(user)=>{
 
 // logout 
 const logOut=()=>{
+  setLoading(true)
  return signOut(auth)
 };
 
@@ -87,7 +91,7 @@ useEffect(()=>{
     if(currentUser){
       axios.post(`http://localhost:5000/jwt`,{email:currentUser.email})
       .then((data)=>{
-        localStorage.getItem("access-token",data.data.token)
+        localStorage.setItem("access-token",data.data.token)
         setLoading(false)
       })
     }else{

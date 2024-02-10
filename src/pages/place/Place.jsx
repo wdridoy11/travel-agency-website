@@ -10,7 +10,7 @@ const Place = (props) => {
       <div>
         <div className="shadow-lg rounded-b-lg">
           <div className="relative">
-             <img src={travel_place} alt="Travel Place" />
+             <img className='rounded-t-md' src={travel_place} alt="Travel Place" />
              <button className="absolute bottom-0 right-0 bg-[#ff7e01] text-white px-4 py-1 
              hover:bg-black transition duration-150">Featured</button>
           </div>

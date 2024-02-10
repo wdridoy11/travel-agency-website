@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useContext, useEffect } from 'react'
+import{ useContext, useEffect } from 'react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 
@@ -18,10 +18,12 @@ const useAxiosSecure = () => {
             if(token){
                 config.headers.Authorization=`Bearer ${token}`
             }
-            return config
+            return config;
         })
+
         axiosSecure.interceptors.response.use(
-            (response)=>response,async(error)=>{
+            (response)=>response,
+            async(error)=>{
                 if(error.response && (error.response.status === 401 || error.response.status === 403)){
                     await logOut();
                     navigate("/login")

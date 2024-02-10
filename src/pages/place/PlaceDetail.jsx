@@ -11,8 +11,22 @@ const PlaceDetail = () => {
     const {travel_place, description, location, reating, place_name, price, total_reating, _id}= placeLoadData;
   return (
     <div>
-        <div>
-            <img className='w-full h-[90vh] object-cover object-center' src={travel_place} alt="travel_place" /> 
+        <div className='pt-10'>
+            {/* <img className='w-full h-[90vh] object-cover object-center' src={travel_place} alt="travel_place" />  */}
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 px-10'>
+                <div>
+                    <img className='w-full rounded-md lg:h-[630px] object-cover' src={travel_place} alt="travel_place" /> 
+                </div>
+                <div className='grid md:grid-cols-1 gap-8'>
+                    <img className='w-full rounded-md lg:h-[300px] object-cover' src={travel_place} alt="travel_place" />
+                    <img className='w-full rounded-md lg:h-[300px] object-cover' src={travel_place} alt="travel_place" />
+                </div>
+                <div className='relative'>
+                    <img className='w-full rounded-md lg:h-[630px] object-cover' src={travel_place} alt="travel_place" />
+                    <button className='absolute bottom-5 right-5 text-white cursor-pointer inline-block bg-[#ff7e01] border-0 font-medium text-center 
+                    px-7 mt-4 py-2 rounded-md hover:bg-black hover:text-white duration-500'>Show All</button>
+                </div>
+            </div>
             <div className='container'>
                 <div className='my-20 grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
                     <div className='col-span-1 md:col-span-2'>
