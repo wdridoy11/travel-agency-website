@@ -5,24 +5,41 @@ import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthProvider'
 import { useForm } from 'react-hook-form'
 import Payment from '../payment/Payment'
+import Swal from 'sweetalert2'
 
 const Booking = () => {
    const dataLoad = useLoaderData();
    const {user} = useContext(AuthContext);
    const {place_name,travel_place, location, price } = dataLoad;
    const { register, formState: { errors }, handleSubmit } = useForm();
+
    const onSubmit = (data) =>{
-    // fetch(`http://localhost:5000/users`,{
-    //     method:"POST",
-    //     headers:{
-    //         "content-type":"application/json"
-    //     },
-    //     body:JSON.stringify(data)
-    // })
-    // .then((res)=>res.json())
-    // .then((data)=>console.log(data))
-    // .catch((error)=>console.log(error))
+    fetch(`http://localhost:5000/booking`,{
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(data)
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+        if(data.insertedId){
+            Swal.fire({
+                title: "Congratulations!",
+                text: "You are booking successful.",
+                icon: "success"
+              });
+        }else{
+            Swal.fire({
+                title: "Sorry",
+                text: "You are booking not successful.",
+                icon: "error"
+              });
+        }
+    })
+    .catch((error)=>console.log(error.message))
    };
+
   return (
     <div className='py-20'>
         <div className='container mx-auto px-5'>
@@ -41,7 +58,7 @@ const Booking = () => {
                                     {...register("fname",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                 />
-                                {errors.fname?.type === "required" && (<p role="alert">First name is required</p>)}
+                                {errors.fname?.type === "required" && (<p role="alert" className='text-red-500'>First name is required</p>)}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="lname" className='text-base font-normal text-slate-600 mb-1 block'>Your Name</label>
@@ -53,7 +70,7 @@ const Booking = () => {
                                     {...register("lname",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                 />
-                                {errors.lname?.type === "required" && (<p role="alert">Lname name is required</p>)}
+                                {errors.lname?.type === "required" && (<p role="alert" className='text-red-500'>Last name is required</p>)}
                             </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
@@ -69,7 +86,6 @@ const Booking = () => {
                                     className="px-5 py-3 outline-none bg-slate-300 placeholder-slate-600 border border-slate-300 rounded-md w-full cursor-not-allowed"
                                     readOnly
                                 />
-                                {/* {errors.email?.type === "required" && (<p role="alert">Email is required</p>)} */}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="person" className='text-base font-normal text-slate-600 mb-1 block'>Person</label>
@@ -83,7 +99,7 @@ const Booking = () => {
                                     {...register("person",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                 />
-                                {errors.person?.type === "required" && (<p role="alert">Person is required</p>)}
+                                {errors.person?.type === "required" && (<p role="alert" className='text-red-500'>Person is required</p>)}
                             </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
@@ -97,9 +113,9 @@ const Booking = () => {
                                     {...register("phone",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                 />
-                                {errors.phone?.type === "required" && (<p role="alert">Number is required</p>)}
+                                {errors.phone?.type === "required" && (<p role="alert" className='text-red-500'>Number is required</p>)}
                             </div>
-                            {/* <div>
+                            <div>
                                 <label className='text-base font-normal text-slate-600 mb-1 block'>choose date</label>
                                 <select className="select w-full border border-slate-300">
                                     <option disabled selected>Date</option>
@@ -110,7 +126,7 @@ const Booking = () => {
                                     <option>15/08/2023--20/08/2023</option>
                                     <option>25/08/2023--30/08/2023</option>
                                 </select>
-                            </div> */}
+                            </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
                             <div className='mb-4'>
@@ -123,7 +139,7 @@ const Booking = () => {
                                     {...register("city",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                 />
-                                {errors.city?.type === "required" && (<p role="alert">City name is required</p>)}
+                                {errors.city?.type === "required" && (<p role="alert" className='text-red-500'>City name is required</p>)}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="state" className='text-base font-normal text-slate-600 mb-1 block'>State/Province/Region</label>
@@ -136,7 +152,7 @@ const Booking = () => {
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                     required 
                                 />
-                                {errors.state?.type === "required" && (<p role="alert">State name is required</p>)}
+                                {errors.state?.type === "required" && (<p role="alert" className='text-red-500'>State name is required</p>)}
                             </div>
                         </div>
                         <div className='grid md:grid-cols-2 gap-3 mb-5'>
@@ -150,7 +166,7 @@ const Booking = () => {
                                     {...register("postal",{ required: true })}
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                 />
-                                {errors.postal?.type === "required" && (<p role="alert">ZIP code is required</p>)}
+                                {errors.postal?.type === "required" && (<p role="alert" className='text-red-500'>ZIP code is required</p>)}
                             </div>
                             <div className='mb-4'>
                                 <label htmlFor="address" className='text-base font-normal text-slate-600 mb-1 block'>Your Address</label>
@@ -163,10 +179,10 @@ const Booking = () => {
                                     className="bg-transparent px-5 py-3 outline-none placeholder-slate-600 border border-slate-300 rounded-md w-full"
                                     required 
                                 />
-                                {errors.address?.type === "required" && (<p role="alert">Address is required</p>)}
+                                {errors.address?.type === "required" && (<p role="alert" className='text-red-500'>Address is required</p>)}
                             </div>
                             <div>
-                                <Payment></Payment>
+                                {/* <Payment></Payment> */}
                             </div>
                         </div>
                         <input 
@@ -193,7 +209,7 @@ const Booking = () => {
                     <div>
                         <div className=' flex justify-between'>
                             <p className="text-lg text-slate-600 font-medium">Price per person</p>
-                            <p className="text-lg text-slate-600 font-medium">{price}</p>
+                            <p className="text-lg text-slate-600 font-medium">${price}</p>
                         </div>
                         <div className=' flex justify-between'>
                             <p className="text-lg text-slate-600 font-medium">Location</p>

@@ -9,6 +9,9 @@ import Booking from '../pages/booking/Booking';
 import SignupForm from '../pages/Signup/SignupForm';
 import PlaceDetail from '../pages/place/PlaceDetail';
 import BlogDetails from '../pages/blogs/BlogDetails';
+import Dashboard from '../layout/Dashboard';
+import Blog from '../pages/blogs/Blog';
+import MyBooking from '../pages/dashboard/user/MyBooking';
 
 const router=createBrowserRouter([
     {
@@ -39,7 +42,20 @@ const router=createBrowserRouter([
                 loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
               },
         ]
-    },
+    },{
+      path:"dashboard",
+      element:<Dashboard />,
+      children:[
+          {
+              path:"doctor",
+              element:<Blog />
+          },
+          {
+              path:"my-booking",
+              element:<MyBooking />
+          },
+      ]
+  },
     {
       path: "login",
       element: <Login></Login>

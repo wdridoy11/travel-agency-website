@@ -29,30 +29,31 @@ const Header = () => {
   </>
 
   return (
-    <div>
-      <div>
-        <Container>
-          <div className="navbar bg-base-100">
-            <div className="navbar-start">
-              <div className="dropdown">
-                <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    {navMenu}
-                </ul>
-              </div>
-              <Link to={'/'}><img width="100" src={Logo} alt="logo" /></Link>
+    <div className='bg-transparent py-3 fixed z-10 bg-opacity-30 bg-base-100 w-full backdrop-blur-sm'>
+    <div className='container mx-auto'>
+        <div className='flex justify-between items-center'>
+            <div>
+                <Link to={'/'}><img className='w-24' src={Logo} alt="logo" /></Link>
             </div>
-            <div className="navbar-end hidden lg:flex">
-              <ul className="menu menu-horizontal px-1">
-                {navMenu}
-              </ul>
+            <div className='flex gap-6 items-center'>
+                <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
+                <Link className='text-base font-medium text-black' to={`/about`}>About</Link>
+                <Link className='text-base font-medium text-black' to={`/`}>Place</Link>
+                <Link className='text-base font-medium text-black' to={`/`}>Blog</Link>
+                <Link className='text-base font-medium text-black' to={`/`}>Contact</Link>
+                 <div>
+                    {user ? <div>
+                      {/* <Link className='text-base font-medium bg-[#40d0c6] text-white px-7 py-2 rounded-full hover:bg-black duration-500 mr-2' to={'/my_booking'}>My Appointment</Link> */}
+                      <Link className='text-base font-medium text-black mr-4' to={`/dashboard`}>Dashboard</Link>
+                      <Link className='text-base font-medium bg-[#40d0c6] text-white px-7 py-2 rounded-full hover:bg-black duration-500' onClick={userLogOut}>Logout</Link>
+                    </div>:
+                      <Link className='text-base font-medium bg-[#40d0c6] text-white px-7 py-2 rounded-full hover:bg-black duration-500' to={`/login`}>Login</Link>
+                    } 
+                 </div>
             </div>
-          </div>
-        </Container>
-      </div>
+        </div>
     </div>
+</div>
   )
 }
 
